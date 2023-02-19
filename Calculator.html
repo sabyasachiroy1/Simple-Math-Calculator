@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CALCULATOR</title>
+<style>
+    .border{
+    height: 10cm;
+    width: 15cm;
+    border: 23px solid #B22222;
+    padding: auto;
+    background-color: #FFD700;
+    color :#0000CD;
+    size-adjust: auto;
+    
+    
+}
+
+.num {
+   color: rgb(255, 255, 255);
+   background-color: rgb(3, 3, 3);
+   height: 1cm;
+   width: 2cm;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+.target {
+    color: red;
+}
+</style>
+</head>
+<body>
+    
+    <center>
+        <h1 class="target">BASIC CALCULATOR </h1><hr><br>
+<div class="border">
+    <br>
+  
+    <label for="num1">ENTER FIRST NUMBER: </label>&#160&#160&#160&#160&#160&#160<input type="text" id="num1" class="num" required><br>
+<label for="num2">ENTER SECOND NUMBER: </label>&#160<input type="text" id="num2" class="num" required> <br><br>
+<label for="operator">CHOOSE OPERATORS </label>&#160<select id="operator">
+    <option value="NULL">SELECT OPTION</option>
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select><br><br>
+<button onclick="calculate()">CALCULATE</button><br><br>
+<label for="output">RESULT:</label>&#160 <input type="" readonly id="output">
+</div>
+</center>
+<br><br><br><br><br><br><br><br>
+<marquee class="target"><b>It is a simple mathematics calculator designed by <i>SABYASACHI ROY</i></b></marquee>
+
+
+</body>
+<script type="text/javascript">
+    function calculate()
+{
+    let calculates;
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let operator = document.getElementById("operator").value;
+    if (operator=='NULL')
+    {
+        alert("Please Select one operator");
+    }
+    if (operator=='+')
+    {
+        calculates= parseFloat(num1) + parseFloat(num2);
+    }
+    if (operator=='-')
+    {
+        calculates= parseFloat(num1) - parseFloat(num2);
+    }
+    if (operator=='*')
+    {
+        calculates= parseFloat(num1) * parseFloat(num2);
+    }
+    if (operator=='/')
+    {
+        calculates= parseFloat(num1) / parseFloat(num2);
+    }
+
+    let output = document.getElementById("output").value=calculates;
+}
+</script>
+</html>
